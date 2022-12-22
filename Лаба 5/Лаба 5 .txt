@@ -1,0 +1,21 @@
+car(mercedes_benz, 15000000, 4, 200, 3000).
+car(lada, 300000, 10, 180, 1075).
+car(dodge, 9000000, 6, 430, 2500).
+car(bmw, 2000000, 13, 300 2000).
+car(audi, 10000000, 3, 200, 1500).
+price(X, G) :- car(X, G, Z, W, K).
+expensive(X, G) :- price(X, G), G >= 9000000.
+age(X, Z) :- car(X, G, Z, W, K).
+old(X, Z) :- age(X, Z), Z >= 6.
+speed(X, W) :- car(X, G, Z, W, K).
+fast(X, W) :- speed(X, W), W >= 300.
+weight(X, K) :- car(X, G, Z, W, K).
+heavy(X, K) :- weight(X, K), K >= 2000.
+Текст запроса к expensive:
+expensive(X, G), car(X, G, Z, W).
+Текст запроса к old:
+old(X, Z), car(X, G, Z, W).
+Текст запроса к fast:
+fast(X, W), car(X, G, Z, W). 
+Текст запроса к heavy:
+heavy(X, K), car(X, G, Z, W, K).
